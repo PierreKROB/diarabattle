@@ -5,3 +5,4 @@ exports.getmyBox = (req, res, next) => {
       .then(box => res.status(200).json(box))
       .catch(error => res.status(500).json({ error }))
 }
+

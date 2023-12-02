@@ -1,5 +1,4 @@
-const Box = require('../models/Box'); // Assurez-vous d'importer votre modèle de boîte
-const mongoose = require('mongoose');
+const Box = require('../models/Box');
 
 const findBoxByUserId = async (userId) => {
     try {
