@@ -8,8 +8,11 @@ const box = Object({
 })
 
 const boxSchema = mongoose.Schema({
-    id_User: { type: Number, required: true, unique: true },
+    id_User: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+    },
     box: [box],
-})
-
+});
 module.exports = mongoose.model('Box', boxSchema);
