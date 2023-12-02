@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-const createBoxIfNotExists = require('../helpers/helperBox');
+const ensureBoxExists = require('../helpers/helperBox');
 
 exports.signup = async (req, res, next) => {
 
@@ -73,7 +73,7 @@ exports.login = (req, res, next) => {
                             if (!valid) {
                                 res.status(401).json({ message: 'Identifiants incorrects.' })
                             } else {
-                                
+
                                  // Créer la box si elle n'existe pas
                                 await ensureBoxExists(user._id);
 
